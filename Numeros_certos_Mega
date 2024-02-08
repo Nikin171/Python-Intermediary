@@ -1,0 +1,20 @@
+import json
+import random
+import requests
+
+url = f'https://loteriascaixa-api.herokuapp.com/api/megasena'
+
+lista = []
+response = requests.get(url)
+sorteios = json.loads(response.text)
+
+for sorteio in sorteios:
+    #for numero in sorteio ['dezenasOrdemSorteio']:
+    #lista.append(int(numero))
+    lista.append(sorteio ['dezenasOrdemSorteio'])
+
+sorte = []
+for i in range(1):
+    sorte.append(random.choice(lista))
+
+print(sorte)

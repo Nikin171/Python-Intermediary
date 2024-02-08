@@ -28,7 +28,7 @@
 # print(logradouro)
 # print(metereologia)
 
-
+'''
 import requests
 import json
 
@@ -59,3 +59,35 @@ logradouro, metereologia = get_cidade(cep)
 
 print(logradouro)
 print(metereologia)
+
+'''
+'''
+import requests
+import json
+
+sentence_url = f'https://api.gameofthronesquotes.xyz/v1/random'
+
+resposta_sentence = requests.get(sentence_url)
+resposta_json = json.loads(resposta_sentence.text)
+resposta_sentence = resposta_json["sentence"]
+caracter_json = resposta_json["character"] ["name"]
+
+print(f"{resposta_sentence} - {caracter_json}")
+
+'''
+
+import requests
+import json
+
+url = f'https://loteriascaixa-api.herokuapp.com/api/megasena'
+
+num = requests.get(url)
+resposta_json = json.loads(num.text)
+loteria = resposta_json [0] ['dezenasOrdemSorteio']
+print(loteria)
+
+
+
+
+
+
